@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comparez gratuitement les devis des meilleurs professionnels de la sécurité incendie près de chez vous. Mise en relation rapide, sans engagement.">
+  <title>Devis Gratuit Sécurité Incendie | Comparez les Meilleurs Spécialistes</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "DevisIncendie.fr — Mise en relation sécurité incendie",
+    "description": "Service gratuit de mise en relation avec des professionnels certifiés en sécurité incendie partout en France.",
+    "provider": { "@type": "Organization", "name": "DevisIncendie.fr" },
+    "areaServed": { "@type": "Country", "name": "France" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1200" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ce service de mise en relation est-il vraiment gratuit ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, totalement gratuit. Vous remplissez le formulaire, nous transmettons votre demande à des professionnels qualifiés de votre région sans aucun frais ni engagement." } },
+      { "@type": "Question", "name": "Quel est le budget moyen pour sécuriser un bâtiment ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le budget varie selon la superficie et le type d'installation. Comptez de 150€ pour un appartement à plusieurs milliers d'euros pour un ERP. Le devis gratuit vous donnera une estimation précise." } },
+      { "@type": "Question", "name": "Suis-je obligé d'accepter le devis reçu ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolument pas. Vous recevez des propositions et vous êtes totalement libre de les accepter ou de les refuser." } }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #c0392b;
+      --red-dark:   #96281b;
+      --red-light:  #e74c3c;
+      --red-pale:   #fdf0ee;
+      --orange:     #e67e22;
+      --green:      #27ae60;
+      --green-dark: #1e8449;
+      --gray-900:   #111827;
+      --gray-800:   #1f2937;
+      --gray-700:   #374151;
+      --gray-500:   #6b7280;
+      --gray-300:   #d1d5db;
+      --gray-100:   #f3f4f6;
+      --white:      #ffffff;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.1);
+      --shadow:     0 4px 24px rgba(0,0,0,0.12);
+      --shadow-lg:  0 10px 40px rgba(0,0,0,0.18);
+      --radius:     10px;
+      --radius-lg:  16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+      color: var(--gray-700);
+      background: var(--gray-100);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       URGENCY TOP BAR
+    ═══════════════════════════════════════ */
+    .urgency-bar {
+      background: linear-gradient(90deg, var(--gray-900), #1a1a2e, var(--gray-900));
+      color: var(--white);
+      text-align: center;
+      font-size: 0.82rem;
+      padding: 9px 16px;
+      letter-spacing: 0.01em;
+      position: relative;
+    }
+    .urgency-bar .pulse {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: #2ecc71;
+      border-radius: 50%;
+      margin-right: 7px;
+      animation: pulse 1.5s infinite;
+      vertical-align: middle;
+    }
+    @keyframes pulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(46,204,113,0.6); }
+      50%      { box-shadow: 0 0 0 6px rgba(46,204,113,0); }
+    }
+    .urgency-bar .hot { color: #f1c40f; font-weight: 700; }
+    .urgency-bar .slots {
+      background: var(--red);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin: 0 4px;
+    }
+
+    /* ═══════════════════════════════════════
+       STICKY HEADER
+    ═══════════════════════════════════════ */
+    header {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 55%, #bf4500 100%);
+      color: var(--white);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .logo-icon svg { width: 26px; height: 26px; }
+    .logo-text { font-size: 1.1rem; font-weight: 800; line-height: 1.2; }
+    .logo-text small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.85; }
+
+    .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .phone-btn {
+      background: var(--white);
+      color: var(--red-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 9px 18px;
+      border-radius: 24px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .phone-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+    .header-cta-btn {
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 9px 18px;
+      border-radius: 24px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: filter 0.15s;
+      display: none;
+    }
+    .header-cta-btn:hover { filter: brightness(1.1); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(155deg, #0f0f1a 0%, #1a1a2e 50%, #2d1010 100%);
+      color: var(--white);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(192,57,43,0.18), transparent);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c0392b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 800px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(192,57,43,0.25);
+      border: 1px solid rgba(192,57,43,0.5);
+      color: #ff8a7a;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-badge .dot { width:7px;height:7px;background:#ff5252;border-radius:50%;animation:pulse 1.5s infinite; }
+
+    .hero h1 {
+      font-size: clamp(1.85rem, 5.5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.12;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em { font-style: normal; color: #ff6b5b; }
+    .hero h1 .underline {
+      position: relative; display: inline-block;
+    }
+    .hero h1 .underline::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-light), var(--orange));
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem; opacity: 0.82;
+      max-width: 580px; margin: 0 auto 36px;
+    }
+
+    .benefits {
+      display: flex; justify-content: center;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 36px;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(4px);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-align: center;
+      flex: 1; min-width: 150px; max-width: 200px;
+      transition: background 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .benefit-card:hover {
+      background: rgba(192,57,43,0.2);
+      transform: translateY(-3px);
+    }
+    .benefit-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+    .benefit-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; }
+    .benefit-desc { font-size: 0.76rem; opacity: 0.68; }
+
+    .hero-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+      color: var(--white);
+      font-size: 1.1rem; font-weight: 900;
+      padding: 16px 36px; border-radius: 50px;
+      text-decoration: none; margin-bottom: 16px;
+      box-shadow: 0 8px 32px rgba(192,57,43,0.5);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+    .hero-cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 40px rgba(192,57,43,0.65); }
+    .hero-cta-arrow { transition: transform 0.2s; }
+    .hero-cta-btn:hover .hero-cta-arrow { transform: translateX(4px); }
+
+    .hero-scroll { color: rgba(255,255,255,0.4); font-size: 0.78rem; margin-top: 8px; }
+    .hero-arrow { font-size: 1.6rem; color: var(--red-light); animation: bounce 1.8s infinite; display: block; margin-top: 4px; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+    /* ═══════════════════════════════════════
+       TRUST BAR
+    ═══════════════════════════════════════ */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 2px solid var(--gray-100);
+      padding: 14px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .trust-inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 28px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.84rem; font-weight: 600; color: var(--gray-700);
+      white-space: nowrap;
+    }
+    .trust-item .ti { font-size: 1.1rem; color: var(--red); }
+
+    /* ═══════════════════════════════════════
+       LIVE NOTIFICATION TOAST
+    ═══════════════════════════════════════ */
+    .live-toast {
+      position: fixed; bottom: 80px; left: 16px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 12px;
+      max-width: 300px;
+      z-index: 999;
+      transform: translateX(-120%);
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+      border-left: 4px solid var(--green);
+    }
+    .live-toast.show { transform: translateX(0); }
+    .toast-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 700; font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .toast-text { font-size: 0.78rem; line-height: 1.4; }
+    .toast-text strong { color: var(--gray-900); display: block; font-size: 0.82rem; }
+    .toast-time { font-size: 0.7rem; color: var(--gray-500); margin-top: 2px; }
+
+    /* ═══════════════════════════════════════
+       MAIN LAYOUT
+    ═══════════════════════════════════════ */
+    .main {
+      max-width: 1020px; margin: 0 auto;
+      padding: 48px 16px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ═══════════════════════════════════════
+       LEFT COLUMN
+    ═══════════════════════════════════════ */
+    .left-col h2 {
+      font-size: 1.5rem; font-weight: 900;
+      color: var(--gray-900); margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .left-col h2 span { color: var(--red); }
+    .left-col .lead { color: var(--gray-500); margin-bottom: 24px; font-size: 0.93rem; }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .feature-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 15px 17px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--red);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .feature-item:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .fi-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 1px; }
+    .fi-text strong { display: block; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; font-size: 0.93rem; }
+    .fi-text p { font-size: 0.82rem; color: var(--gray-500); margin: 0; }
+
+    /* Stats */
+    .stats-row { display: flex; gap: 12px; margin-bottom: 32px; }
+    .stat-box {
+      flex: 1;
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white); border-radius: var(--radius);
+      padding: 16px 10px; text-align: center;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+    }
+    .stat-num { font-size: 1.7rem; font-weight: 900; line-height: 1; }
+    .stat-lbl { font-size: 0.7rem; opacity: 0.82; margin-top: 4px; }
+
+    /* TESTIMONIALS */
+    .testimonials-title {
+      font-size: 1rem; font-weight: 800; color: var(--gray-900);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .testimonials-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--gray-300);
+    }
+
+    .testimonial-list { display: flex; flex-direction: column; gap: 12px; }
+    .testimonial {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      position: relative;
+    }
+    .testimonial::before {
+      content: '"';
+      position: absolute; top: 10px; right: 14px;
+      font-size: 2.5rem; color: var(--gray-300);
+      font-family: Georgia, serif; line-height: 1;
+    }
+    .t-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .t-avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; color: var(--white);
+      flex-shrink: 0;
+    }
+    .t-info { flex: 1; }
+    .t-name { font-weight: 700; font-size: 0.88rem; color: var(--gray-900); }
+    .t-meta { font-size: 0.73rem; color: var(--gray-500); }
+    .t-stars { color: #f59e0b; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 2px; }
+    .t-body { font-size: 0.82rem; color: var(--gray-700); line-height: 1.5; font-style: italic; }
+    .t-verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.7rem; color: var(--green); font-weight: 600; margin-top: 6px;
+    }
+
+    /* FAQ */
+    .faq-section { margin-top: 32px; }
+    .faq-title {
+      font-size: 1rem; font-weight: 800; color: var(--gray-900);
+      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+    }
+    .faq-title::after { content: ''; flex: 1; height: 1px; background: var(--gray-300); }
+
+    details {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--gray-100);
+      margin-bottom: 8px; overflow: hidden;
+    }
+    details summary {
+      padding: 13px 16px;
+      font-weight: 600; font-size: 0.88rem; color: var(--gray-900);
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      user-select: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: '+'; font-size: 1.1rem; color: var(--red);
+      font-weight: 700; transition: transform 0.2s;
+      flex-shrink: 0; margin-left: 8px;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details .faq-body { padding: 0 16px 14px; font-size: 0.83rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* ═══════════════════════════════════════
+       FORM CARD
+    ═══════════════════════════════════════ */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: sticky;
+      top: 76px;
+      border: 1px solid rgba(192,57,43,0.15);
+    }
+
+    .form-header {
+      background: linear-gradient(135deg, var(--red-dark), var(--red) 70%, #c0451b);
+      color: var(--white);
+      padding: 22px 26px 18px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .form-header-inner { position: relative; }
+    .form-header h2 { font-size: 1.2rem; font-weight: 900; margin-bottom: 5px; letter-spacing: -0.01em; }
+    .form-header p { font-size: 0.82rem; opacity: 0.88; }
+    .form-guarantee {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.75rem; font-weight: 700;
+      margin-top: 10px;
+    }
+
+    /* Scarcity bar */
+    .scarcity-bar {
+      background: linear-gradient(90deg, #fff8e1, #fff3cd);
+      border-bottom: 2px solid #f59e0b;
+      padding: 9px 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #92400e;
+      font-weight: 600;
+    }
+    .scarcity-bar .slots-count {
+      background: var(--red);
+      color: var(--white);
+      font-weight: 800;
+      padding: 1px 8px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+    }
+
+    /* MULTI-STEP FORM */
+    .step-indicator {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; padding: 18px 26px 0;
+    }
+    .step-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 700;
+      background: var(--gray-100); color: var(--gray-500);
+      border: 2px solid var(--gray-300);
+      transition: all 0.3s; flex-shrink: 0;
+      position: relative; z-index: 1;
+    }
+    .step-dot.active { background: var(--red); color: var(--white); border-color: var(--red); }
+    .step-dot.done { background: var(--green); color: var(--white); border-color: var(--green); }
+    .step-line {
+      flex: 1; height: 2px;
+      background: var(--gray-300);
+      transition: background 0.3s;
+    }
+    .step-line.done { background: var(--green); }
+    .step-labels {
+      display: flex; justify-content: space-between;
+      padding: 6px 10px 0;
+    }
+    .step-label { font-size: 0.66rem; color: var(--gray-500); text-align: center; flex: 1; }
+    .step-label.active { color: var(--red); font-weight: 600; }
+
+    /* Progress bar */
+    .progress-wrap { padding: 12px 26px 0; }
+    .progress-bar {
+      height: 4px; background: var(--gray-100); border-radius: 4px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .form-steps { padding: 20px 26px 26px; }
+
+    /* Individual steps */
+    .step { display: none; }
+    .step.active { display: block; animation: fadeInUp 0.3s ease; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-title {
+      font-size: 0.95rem; font-weight: 700; color: var(--gray-900);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .field { margin-bottom: 13px; }
+    .field:last-child { margin-bottom: 0; }
+    .field label {
+      display: block; font-size: 0.8rem; font-weight: 600;
+      color: var(--gray-700); margin-bottom: 4px;
+    }
+    .field label .req { color: var(--red); margin-left: 2px; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-size: 0.9rem; color: var(--gray-900);
+      background: var(--gray-100);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      font-family: inherit;
+      appearance: none; -webkit-appearance: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+      background: var(--white);
+    }
+    .field input.error,
+    .field select.error { border-color: var(--red); background: #fff5f5; }
+    .field .error-msg { font-size: 0.72rem; color: var(--red); margin-top: 3px; display: none; }
+    .field.has-error .error-msg { display: block; }
+
+    .input-unit { position: relative; }
+    .input-unit input { padding-right: 40px; }
+    .input-unit .unit {
+      position: absolute; right: 12px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem; color: var(--gray-500); font-weight: 600;
+      pointer-events: none;
+    }
+    .field textarea { resize: vertical; min-height: 80px; }
+
+    /* Field hint */
+    .field-hint {
+      font-size: 0.72rem; color: var(--gray-500);
+      margin-top: 4px; display: flex; align-items: center; gap: 4px;
+    }
+
+    /* Personalized scarcity */
+    .scarcity-personalized {
+      background: linear-gradient(90deg, #e8f5e9, #f1f8e9);
+      border: 1px solid #a5d6a7;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font-size: 0.8rem; color: #2e7d32;
+      margin-bottom: 14px;
+    }
+
+    /* Cert badges */
+    .cert-badges {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; padding: 14px 26px 0;
+    }
+    .cert-badge {
+      display: flex; align-items: center; gap: 5px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--gray-700);
+    }
+    .cert-badge .cb-icon { font-size: 1rem; color: var(--red); }
+
+    /* Submit loading */
+    .btn-submit.loading { opacity: 0.8; pointer-events: none; }
+    .spinner {
+      display: inline-block;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle; margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Project grid */
+    .project-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin-bottom: 6px;
+    }
+
+    /* Building type cards (step 1) */
+    .building-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; margin-bottom: 14px;
+    }
+    .building-option { display: none; }
+    .building-label {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 5px;
+      padding: 12px 6px;
+      border: 2px solid var(--gray-300);
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 0.75rem; font-weight: 600; color: var(--gray-700);
+      text-align: center;
+      transition: all 0.2s;
+      background: var(--gray-100);
+    }
+    .building-label .bl-icon { font-size: 1.6rem; }
+    .building-option:checked + .building-label {
+      border-color: var(--red);
+      background: var(--red-pale);
+      color: var(--red-dark);
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    }
+
+    /* Urgency line in form */
+    .urgency-line {
+      background: linear-gradient(90deg, #fff8e1, #ffe8e0);
+      border: 1px solid #f59e0b;
+      border-radius: var(--radius);
+      padding: 9px 12px;
+      font-size: 0.78rem; color: #92400e;
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 14px; font-weight: 500;
+    }
+    .urgency-line .count-down { font-weight: 700; color: var(--red); font-size: 0.82rem; }
+
+    /* Nav buttons */
+    .form-nav { display: flex; gap: 10px; margin-top: 16px; }
+    .btn-next, .btn-prev, .btn-submit {
+      flex: 1; padding: 13px;
+      border: none; border-radius: var(--radius);
+      font-size: 0.95rem; font-weight: 800;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .btn-next, .btn-submit {
+      background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(192,57,43,0.38);
+    }
+    .btn-next:hover, .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(192,57,43,0.48);
+      filter: brightness(1.05);
+    }
+    .btn-next:active, .btn-submit:active { transform: translateY(0); }
+    .btn-prev {
+      background: var(--gray-100); color: var(--gray-700);
+      border: 1.5px solid var(--gray-300); flex: 0 0 auto; width: 44px;
+      font-size: 1rem; padding: 0;
+    }
+    .btn-prev:hover { background: var(--gray-300); }
+
+    .form-note {
+      text-align: center; font-size: 0.73rem; color: var(--gray-500);
+      margin-top: 12px;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+
+    /* SUCCESS */
+    .success-msg { display: none; text-align: center; padding: 44px 28px; }
+    .success-icon { font-size: 4rem; margin-bottom: 16px; }
+    .success-msg h3 { font-size: 1.3rem; font-weight: 900; color: var(--gray-900); margin-bottom: 10px; }
+    .success-msg p { color: var(--gray-500); font-size: 0.88rem; margin-bottom: 8px; line-height: 1.6; }
+    .success-steps { list-style: none; text-align: left; margin: 16px 0; }
+    .success-steps li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.84rem; color: var(--gray-700); margin-bottom: 8px;
+    }
+    .success-steps li .ss-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-size: 0.72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .success-phone-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700; font-size: 0.92rem;
+      padding: 11px 22px; border-radius: 24px;
+      text-decoration: none; margin-top: 10px;
+      transition: filter 0.2s;
+    }
+    .success-phone-btn:hover { filter: brightness(1.1); }
+
+    /* ═══════════════════════════════════════
+       MOBILE FLOATING CTA
+    ═══════════════════════════════════════ */
+    .mobile-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--white);
+      border-top: 2px solid var(--gray-100);
+      padding: 12px 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+      z-index: 200;
+      gap: 10px;
+    }
+    .mobile-cta .mc-btn {
+      flex: 1; padding: 13px; border-radius: var(--radius);
+      font-weight: 800; font-size: 0.88rem; text-decoration: none;
+      text-align: center; display: block;
+    }
+    .mc-devis {
+      background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(192,57,43,0.35);
+    }
+    .mc-tel {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* ═══════════════════════════════════════
+       EXIT INTENT POPUP
+    ═══════════════════════════════════════ */
+    .overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6); z-index: 1000;
+      align-items: center; justify-content: center;
+      padding: 16px;
+    }
+    .overlay.show { display: flex; }
+    .popup {
+      background: var(--white); border-radius: var(--radius-lg);
+      max-width: 440px; width: 100%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+      animation: popIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .popup-header {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white); padding: 24px;
+      text-align: center; position: relative;
+    }
+    .popup-header h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
+    .popup-header p { font-size: 0.85rem; opacity: 0.88; }
+    .popup-close {
+      position: absolute; top: 12px; right: 14px;
+      background: rgba(255,255,255,0.2); border: none; color: var(--white);
+      width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+      font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    }
+    .popup-body { padding: 24px; }
+    .popup-offer {
+      background: var(--red-pale); border: 2px solid rgba(192,57,43,0.2);
+      border-radius: var(--radius); padding: 14px 16px; margin-bottom: 18px;
+      font-size: 0.88rem; color: var(--gray-800);
+    }
+    .popup-offer strong { color: var(--red); display: block; font-size: 1rem; margin-bottom: 4px; }
+    .popup-btn {
+      display: block; width: 100%;
+      background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+      color: var(--white); border: none;
+      padding: 14px; border-radius: var(--radius);
+      font-size: 1rem; font-weight: 800; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.4);
+      margin-bottom: 10px; font-family: inherit;
+      transition: filter 0.15s;
+    }
+    .popup-btn:hover { filter: brightness(1.05); }
+    .popup-dismiss {
+      display: block; text-align: center;
+      font-size: 0.78rem; color: var(--gray-500);
+      cursor: pointer; text-decoration: underline;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--gray-900);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 24px 16px 80px; /* bottom padding for mobile CTA */
+      font-size: 0.78rem;
+    }
+    footer a { color: var(--red-light); text-decoration: none; }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    /* ═══════════════════════════════════════
+       HOW IT WORKS
+    ═══════════════════════════════════════ */
+    .how-it-works {
+      background: var(--white);
+      padding: 48px 24px 44px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+    .hiw-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+    .hiw-label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+    }
+    .hiw-title {
+      font-size: 1.6rem; font-weight: 900; color: var(--gray-900);
+      margin-bottom: 36px; letter-spacing: -0.02em;
+    }
+    .hiw-steps {
+      display: flex; align-items: flex-start; justify-content: center;
+      gap: 0; flex-wrap: wrap;
+    }
+    .hiw-step {
+      flex: 1; min-width: 180px; max-width: 240px;
+      padding: 0 16px;
+      position: relative;
+    }
+    .hiw-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--red); color: var(--white);
+      font-weight: 900; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 12px rgba(192,57,43,0.35);
+    }
+    .hiw-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+    .hiw-step-title { font-weight: 800; color: var(--gray-900); font-size: 0.95rem; margin-bottom: 8px; }
+    .hiw-step-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.55; }
+    .hiw-arrow {
+      font-size: 1.6rem; color: var(--gray-300); align-self: center;
+      padding: 0 4px; margin-top: -20px; flex-shrink: 0;
+    }
+    .hiw-cta-wrap { margin-top: 32px; }
+    .hiw-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--red-dark), var(--red-light));
+      color: var(--white); font-weight: 800; font-size: 1rem;
+      padding: 14px 32px; border-radius: 50px; text-decoration: none;
+      box-shadow: 0 6px 24px rgba(192,57,43,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hiw-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(192,57,43,0.5); }
+
+    /* ═══════════════════════════════════════
+       MATCH SCORE
+    ═══════════════════════════════════════ */
+    .match-score-box {
+      display: flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      border: 1.5px solid #86efac;
+      border-radius: var(--radius);
+      padding: 14px 16px; margin-bottom: 14px;
+    }
+    .match-circle {
+      position: relative; width: 52px; height: 52px; flex-shrink: 0;
+    }
+    .match-circle svg { width: 52px; height: 52px; transform: rotate(-90deg); }
+    .match-circle span {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 900; color: var(--green-dark);
+    }
+    .match-title { font-size: 0.82rem; font-weight: 800; color: #166534; margin-bottom: 3px; }
+    .match-desc { font-size: 0.78rem; color: #15803d; line-height: 1.4; }
+
+    /* ═══════════════════════════════════════
+       INPUT CHECKMARKS (real-time validation)
+    ═══════════════════════════════════════ */
+    .field { position: relative; }
+    .field-check {
+      position: absolute; right: 12px; top: 32px;
+      font-size: 0.9rem; color: var(--green);
+      opacity: 0; transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    .field.valid .field-check { opacity: 1; }
+    .field.valid input, .field.valid select { border-color: var(--green) !important; }
+
+    /* Region hint */
+    .region-hint {
+      font-size: 0.72rem; color: var(--green-dark); font-weight: 600;
+      margin-top: 3px; display: none; align-items: center; gap: 4px;
+    }
+    .region-hint.show { display: flex; }
+
+    /* ═══════════════════════════════════════
+       CONFETTI
+    ═══════════════════════════════════════ */
+    .confetti-piece {
+      position: fixed;
+      width: 10px; height: 10px;
+      top: -10px;
+      border-radius: 2px;
+      animation: confettiFall linear forwards;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    @keyframes confettiFall {
+      to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+
+    @media (max-width: 750px) {
+      header { justify-content: center; text-align: center; }
+      .header-cta-btn { display: none !important; }
+      .hero { padding: 40px 16px 36px; }
+      .hero-cta-btn { font-size: 0.95rem; padding: 14px 24px; }
+      .benefit-card { min-width: 130px; }
+      .main {
+        grid-template-columns: 1fr;
+        padding: 28px 12px 48px;
+        gap: 28px;
+      }
+      .form-card { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .stats-row { gap: 8px; }
+      .form-steps { padding: 16px 18px 20px; }
+      .form-header { padding: 18px 16px 14px; }
+      .step-indicator { padding: 14px 18px 0; }
+      .progress-wrap { padding: 10px 18px 0; }
+      .mobile-cta { display: flex; }
+      footer { padding-bottom: 80px; }
+      .building-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-grid  { grid-template-columns: repeat(2, 1fr); }
+      .live-toast { max-width: calc(100vw - 32px); }
+      .cert-badges { padding: 10px 14px 0; gap: 6px; }
+      .hiw-steps { gap: 16px; }
+      .hiw-arrow { display: none; }
+      .hiw-step { min-width: 140px; }
+      .hiw-title { font-size: 1.3rem; }
+    }
+
+    @media (max-width: 420px) {
+      .benefits { gap: 8px; }
+      .benefit-card { min-width: 110px; padding: 12px 10px; }
+      .trust-inner { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- URGENCY TOP BAR -->
+<div class="urgency-bar">
+  <span class="pulse"></span>
+  <span class="pulse"></span>
+  <span class="hot">En ce moment :</span>
+  <span class="slots" id="activeUsers">14</span> personnes consultent cette page
+  &bull; <span class="slots" id="slotsLeft">3</span> <span id="slotsWeekLabel">créneaux disponibles cette semaine</span>
+</div>
+
+<!-- STICKY HEADER -->
+<header id="mainHeader">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 2 6 8 6 13a6 6 0 0012 0c0-5-6-11-6-11z" fill="#c0392b"/>
+        <path d="M12 8c0 0-3 3.5-3 5.5a3 3 0 006 0C15 11.5 12 8 12 8z" fill="#e74c3c"/>
+        <path d="M12 13c0 0-1.5 1.5-1.5 2.5a1.5 1.5 0 003 0C13.5 14.5 12 13 12 13z" fill="#f59e0b"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      DevisIncendie.fr
+      <small>Comparez les meilleurs spécialistes près de chez vous</small>
+    </div>
+  </div>
+  <div class="header-right">
+    <a href="#form-card" class="header-cta-btn" id="headerCtaBtn">Devis gratuit &#8594;</a>
+    <a href="tel:+33100000000" class="phone-btn">&#128222; 01 00 00 00 00</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Mise en relation Gratuite &amp; Sans Engagement
+    </div>
+    <h1>
+      <span class="underline">Trouvez le bon spécialiste</span><br>
+      sécurité incendie —<br>
+      <em>devis gratuit &amp; comparatif</em>
+    </h1>
+    <p class="hero-sub">
+      Nous vous mettons en relation avec les meilleurs professionnels certifiés
+      de votre région. Comparez plusieurs devis, choisissez librement, sans engagement.
+    </p>
+
+    <div class="benefits">
+      <div class="benefit-card">
+        <span class="benefit-icon">&#9889;</span>
+        <div class="benefit-title">Réponse Rapide</div>
+        <div class="benefit-desc">Mis en relation avec un spécialiste qualifié rapidement</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">&#127941;</span>
+        <div class="benefit-title">Partenaires Certifiés</div>
+        <div class="benefit-desc">Uniquement des professionnels sélectionnés et vérifiés</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">&#128176;</span>
+        <div class="benefit-title">100% Gratuit</div>
+        <div class="benefit-desc">Service de mise en relation sans frais ni engagement</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">&#128737;</span>
+        <div class="benefit-title">Devis Comparatifs</div>
+        <div class="benefit-desc">Plusieurs offres pour choisir la meilleure solution</div>
+      </div>
+    </div>
+
+    <a href="#form-card" class="hero-cta-btn">
+      &#128293; Obtenir mes devis gratuits <span class="hero-cta-arrow">&#8594;</span>
+    </a>
+    <div class="hero-scroll">Formulaire en 60 secondes &bull; Sans engagement</div>
+    <span class="hero-arrow">&#8595;</span>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="ti">&#128737;</span> Partenaires certifiés APSAD</div>
+    <div class="trust-item"><span class="ti">&#128338;</span> Mise en relation rapide</div>
+    <div class="trust-item"><span class="ti">&#11088;</span> 4.9/5 — +1 200 avis</div>
+    <div class="trust-item"><span class="ti">&#127974;</span> Toute la France</div>
+    <div class="trust-item"><span class="ti">&#10003;</span> Professionnels vérifiés</div>
+    <div class="trust-item"><span class="ti">&#128176;</span> Service 100% gratuit</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-label">Simple, rapide, gratuit</div>
+    <h2 class="hiw-title">Comment ça marche ?</h2>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div class="hiw-icon">&#128221;</div>
+        <div class="hiw-step-title">Décrivez votre projet</div>
+        <div class="hiw-step-desc">Remplissez le formulaire en 60 secondes : type de bâtiment, superficie, localisation et coordonnées.</div>
+      </div>
+      <div class="hiw-arrow">&#8594;</div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div class="hiw-icon">&#128101;</div>
+        <div class="hiw-step-title">Mise en relation immédiate</div>
+        <div class="hiw-step-desc">Votre demande est transmise aux professionnels certifiés disponibles dans votre région.</div>
+      </div>
+      <div class="hiw-arrow">&#8594;</div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div class="hiw-icon">&#9989;</div>
+        <div class="hiw-step-title">Comparez &amp; choisissez</div>
+        <div class="hiw-step-desc">Recevez jusqu'à 3 devis comparatifs. Choisissez librement le prestataire le mieux adapté.</div>
+      </div>
+    </div>
+    <div class="hiw-cta-wrap">
+      <a href="#form-card" class="hiw-cta">&#128293; Démarrer maintenant — c'est gratuit</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+    <h2>Pourquoi passer par<br><span>notre réseau ?</span></h2>
+    <p class="lead">Nous sélectionnons pour vous les meilleurs professionnels de la sécurité incendie selon vos besoins.</p>
+
+    <ul class="feature-list">
+      <li class="feature-item">
+        <span class="fi-icon">&#128293;</span>
+        <div class="fi-text">
+          <strong>Partenaires rigoureusement sélectionnés</strong>
+          <p>Chaque professionnel de notre réseau est vérifié : certifications, références, avis clients et conformité aux normes en vigueur.</p>
+        </div>
+      </li>
+      <li class="feature-item">
+        <span class="fi-icon">&#128196;</span>
+        <div class="fi-text">
+          <strong>Devis comparatifs &amp; personnalisés</strong>
+          <p>Recevez plusieurs propositions adaptées à votre type de bâtiment et votre budget. Vous choisissez librement.</p>
+        </div>
+      </li>
+      <li class="feature-item">
+        <span class="fi-icon">&#127974;</span>
+        <div class="fi-text">
+          <strong>Spécialistes locaux partout en France</strong>
+          <p>Notre réseau couvre l'ensemble du territoire. Vous êtes mis en contact avec un expert proche de chez vous.</p>
+        </div>
+      </li>
+      <li class="feature-item">
+        <span class="fi-icon">&#128737;</span>
+        <div class="fi-text">
+          <strong>Tous types de projets pris en charge</strong>
+          <p>Installation, maintenance, mise en conformité, audit — nos partenaires couvrent l'ensemble des besoins en sécurité incendie.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num">+2 500</div>
+        <div class="stat-lbl">Demandes traitées</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">+150</div>
+        <div class="stat-lbl">Partenaires vérifiés</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100%</div>
+        <div class="stat-lbl">Gratuit &amp; sans engagement</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div style="margin-top: 32px;">
+      <div class="testimonials-title">&#11088; Avis clients vérifiés</div>
+      <div class="testimonial-list">
+
+        <div class="testimonial">
+          <div class="t-header">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#c0392b,#e74c3c);">ML</div>
+            <div class="t-info">
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="t-name">Marc L.</div>
+              <div class="t-meta">Gérant de commerce &bull; Lyon</div>
+            </div>
+          </div>
+          <div class="t-body">
+            "Formulaire rempli en 2 minutes, mis en relation avec un spécialiste local le jour même. Devis reçu rapidement, prestaire très sérieux. Je recommande ce service sans hésiter."
+          </div>
+          <div class="t-verified">&#10003; Avis vérifié Google</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="t-header">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#1a7abf,#2980b9);">SF</div>
+            <div class="t-info">
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="t-name">Sophie F.</div>
+              <div class="t-meta">Responsable ERP &bull; Paris</div>
+            </div>
+          </div>
+          <div class="t-body">
+            "Notre ERP avait été mis en demeure. Via ce service, on nous a rapidement orientés vers un expert compétent qui a géré toute la mise en conformité. Très satisfait du professionnel recommandé."
+          </div>
+          <div class="t-verified">&#10003; Avis vérifié Google</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="t-header">
+            <div class="t-avatar" style="background: linear-gradient(135deg,#27ae60,#2ecc71);">TR</div>
+            <div class="t-info">
+              <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="t-name">Thomas R.</div>
+              <div class="t-meta">Propriétaire entrepôt &bull; Bordeaux</div>
+            </div>
+          </div>
+          <div class="t-body">
+            "Simple et efficace. J'ai décrit mon projet pour notre entrepôt de 1 200m², et j'ai reçu plusieurs devis comparatifs. J'ai pu choisir le prestataire le mieux adapté à mon budget."
+          </div>
+          <div class="t-verified">&#10003; Avis vérifié Trustpilot</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="faq-title">Questions fréquentes</div>
+
+      <details>
+        <summary>Ce service de mise en relation est-il vraiment gratuit ?</summary>
+        <div class="faq-body">Oui, totalement gratuit pour vous. Vous remplissez le formulaire, nous transmettons votre demande à des professionnels qualifiés de votre région sans aucun frais ni engagement de votre part.</div>
+      </details>
+
+      <details>
+        <summary>Quel est le budget moyen pour sécuriser mon bâtiment ?</summary>
+        <div class="faq-body">Les tarifs varient selon la superficie et la nature des travaux. À titre indicatif : détecteurs pour un appartement à partir de 150€, mise en conformité d'un commerce entre 800€ et 3 000€, installation complète ERP de 2 000€ à 15 000€. Le devis gratuit vous donnera une estimation précise selon votre situation.</div>
+      </details>
+
+      <details>
+        <summary>Quels types de projets peuvent être pris en charge ?</summary>
+        <div class="faq-body">Nos partenaires couvrent tous les besoins : installation de détecteurs, extincteurs, systèmes d'alarme, sprinklers, RIA, audit de sécurité, mise en conformité ERP, maintenance annuelle. Que vous soyez particulier, commerce, entreprise ou collectivité.</div>
+      </details>
+
+      <details>
+        <summary>Comment sont sélectionnés vos partenaires ?</summary>
+        <div class="faq-body">Nous travaillons uniquement avec des professionnels vérifiés : certifications à jour (APSAD, CNPP…), assurances en règle, et historique de satisfaction client. Nous n'acceptons dans notre réseau que des prestataires sérieux et compétents.</div>
+      </details>
+
+      <details>
+        <summary>Combien de temps faut-il pour être contacté ?</summary>
+        <div class="faq-body">Votre demande est transmise instantanément à nos partenaires. En général, vous êtes contacté dans les heures qui suivent votre demande en jours ouvrés. Certains professionnels peuvent vous rappeler très rapidement selon leur disponibilité.</div>
+      </details>
+
+      <details>
+        <summary>Suis-je obligé d'accepter le devis reçu ?</summary>
+        <div class="faq-body">Absolument pas. Vous recevez des propositions et vous êtes totalement libre de les accepter, de les refuser ou de les comparer. Notre service n'implique aucun engagement de votre côté.</div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="form-card" id="form-card">
+    <div class="form-header">
+      <div class="form-header-inner">
+        <h2>&#128293; Recevez jusqu'à 3 devis gratuits</h2>
+        <p>Comparez les offres de spécialistes certifiés près de chez vous</p>
+        <div class="form-guarantee">&#9989; Gratuit &bull; Sans engagement &bull; Confidentiel</div>
+      </div>
+    </div>
+
+    <div class="cert-badges">
+      <div class="cert-badge"><span class="cb-icon">&#128737;</span>APSAD</div>
+      <div class="cert-badge"><span class="cb-icon">&#10003;</span>CNPP agréé</div>
+      <div class="cert-badge"><span class="cb-icon">&#127919;</span>Norme NF</div>
+      <div class="cert-badge"><span class="cb-icon">&#127891;</span>Certifiés</div>
+    </div>
+
+    <div class="scarcity-bar">
+      &#9203; Plus que <span class="slots-count" id="formSlots">3</span> <span id="formSlotsLabel">créneaux disponibles cette semaine</span> dans votre région
+    </div>
+
+    <!-- Step indicators -->
+    <div class="step-indicator">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-line" id="line1"></div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-line" id="line2"></div>
+      <div class="step-dot" id="dot3">3</div>
+    </div>
+    <div class="step-labels">
+      <div class="step-label active" id="lbl1">Votre bien</div>
+      <div class="step-label" id="lbl2">Contact</div>
+      <div class="step-label" id="lbl3">Confirmation</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width:33%"></div>
+      </div>
+    </div>
+
+    <form id="leadForm" novalidate>
+      <div class="form-steps">
+
+        <!-- STEP 1 : Bâtiment -->
+        <div class="step active" id="step1">
+          <div class="step-title">&#127968; Quel type de bâtiment souhaitez-vous sécuriser ?</div>
+
+          <div class="building-grid">
+            <div>
+              <input type="radio" name="batiment" id="b-maison" value="maison" class="building-option">
+              <label for="b-maison" class="building-label">
+                <span class="bl-icon">&#127968;</span>Maison
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="batiment" id="b-appart" value="appartement" class="building-option">
+              <label for="b-appart" class="building-label">
+                <span class="bl-icon">&#127749;</span>Appartement
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="batiment" id="b-commerce" value="commerce" class="building-option">
+              <label for="b-commerce" class="building-label">
+                <span class="bl-icon">&#127978;</span>Commerce
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="batiment" id="b-entrepot" value="entrepot" class="building-option">
+              <label for="b-entrepot" class="building-label">
+                <span class="bl-icon">&#127981;</span>Entrepôt
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="batiment" id="b-bureau" value="bureau" class="building-option">
+              <label for="b-bureau" class="building-label">
+                <span class="bl-icon">&#127970;</span>Bureau
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="batiment" id="b-erp" value="erp" class="building-option">
+              <label for="b-erp" class="building-label">
+                <span class="bl-icon">&#127963;</span>ERP
+              </label>
+            </div>
+          </div>
+          <div class="field has-error" id="batimentField" style="display:none;">
+            <div class="error-msg">Veuillez sélectionner un type de bâtiment.</div>
+          </div>
+
+          <div class="field">
+            <label>Type de projet <span class="req">*</span></label>
+            <div class="project-grid">
+              <div>
+                <input type="radio" name="projet" id="p-install" value="Installation neuve" class="building-option">
+                <label for="p-install" class="building-label"><span class="bl-icon">&#128736;</span>Installation</label>
+              </div>
+              <div>
+                <input type="radio" name="projet" id="p-conform" value="Mise en conformité" class="building-option">
+                <label for="p-conform" class="building-label"><span class="bl-icon">&#128196;</span>Conformité</label>
+              </div>
+              <div>
+                <input type="radio" name="projet" id="p-maint" value="Maintenance" class="building-option">
+                <label for="p-maint" class="building-label"><span class="bl-icon">&#128295;</span>Maintenance</label>
+              </div>
+              <div>
+                <input type="radio" name="projet" id="p-audit" value="Audit de sécurité" class="building-option">
+                <label for="p-audit" class="building-label"><span class="bl-icon">&#128269;</span>Audit</label>
+              </div>
+              <div>
+                <input type="radio" name="projet" id="p-remplac" value="Remplacement" class="building-option">
+                <label for="p-remplac" class="building-label"><span class="bl-icon">&#128293;</span>Remplacement</label>
+              </div>
+              <div>
+                <input type="radio" name="projet" id="p-autre" value="Autre" class="building-option">
+                <label for="p-autre" class="building-label"><span class="bl-icon">&#8230;</span>Autre</label>
+              </div>
+            </div>
+            <div class="field has-error" id="projetField" style="display:none;">
+              <div class="error-msg">Veuillez sélectionner un type de projet.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="superficie">Superficie <span class="req">*</span></label>
+              <div class="input-unit">
+                <input type="number" id="superficie" name="superficie" placeholder="Ex : 150" min="1" required>
+                <span class="unit">m²</span>
+              </div>
+              <div class="error-msg">Superficie requise.</div>
+            </div>
+            <div class="field" id="fieldCodepostal">
+              <label for="codepostal">Code postal <span class="req">*</span></label>
+              <input type="text" id="codepostal" name="codepostal" placeholder="Ex : 75001" maxlength="5" required autocomplete="postal-code">
+              <span class="field-check">&#10003;</span>
+              <div class="region-hint" id="regionHint">&#127758; <span id="regionName"></span></div>
+              <div class="error-msg">Code postal requis.</div>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-next" id="next1" onclick="goStep(2)">
+              Étape suivante &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2 : Coordonnées -->
+        <div class="step" id="step2">
+          <div class="step-title">&#128222; Comment vous contacter ?</div>
+
+          <div class="urgency-line">
+            &#9203; Votre demande sera transmise dans <span class="count-down" id="countdownTimer">23:47</span> — finalisez pour recevoir vos devis
+          </div>
+
+          <div class="field" id="fieldTel">
+            <label for="telephone">Téléphone <span class="req">*</span></label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel">
+            <span class="field-check">&#10003;</span>
+            <div class="error-msg">Numéro de téléphone requis.</div>
+            <div class="field-hint">&#128274; Contacté uniquement par nos partenaires locaux, jamais de démarchage</div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="prenom">Prénom <span class="req">*</span></label>
+              <input type="text" id="prenom" name="prenom" placeholder="Jean" required autocomplete="given-name">
+              <div class="error-msg">Champ requis.</div>
+            </div>
+            <div class="field">
+              <label for="nom">Nom <span class="req">*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Dupont" required autocomplete="family-name">
+              <div class="error-msg">Champ requis.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jean.dupont@email.fr" required autocomplete="email">
+            <span class="field-check">&#10003;</span>
+            <div class="error-msg">Adresse email valide requise.</div>
+            <div class="field-hint">&#128233; Vos devis comparatifs vous seront envoyés à cette adresse</div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-prev" onclick="goStep(1)">&#8592;</button>
+            <button type="button" class="btn-next" onclick="goStep(3)">
+              Voir le récapitulatif &#8594;
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 : Confirmation -->
+        <div class="step" id="step3">
+          <div class="step-title">&#10003; Vérifiez vos informations</div>
+
+          <div class="match-score-box">
+            <div class="match-score-left">
+              <div class="match-circle" id="matchCircle">
+                <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#e8e8e8" stroke-width="3"/><circle cx="18" cy="18" r="15.9" fill="none" stroke="#27ae60" stroke-width="3" stroke-dasharray="94 100" stroke-dashoffset="25" stroke-linecap="round"/></svg>
+                <span id="matchPct">94%</span>
+              </div>
+            </div>
+            <div class="match-score-right">
+              <div class="match-title">&#127919; Score de compatibilité</div>
+              <div class="match-desc" id="matchDesc">Excellent profil — <strong id="matchCount">4</strong> spécialistes correspondent à votre demande dans votre région.</div>
+            </div>
+          </div>
+
+          <div style="background:var(--gray-100);border-radius:var(--radius);padding:16px;margin-bottom:16px;font-size:0.85rem;">
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Type de bâtiment</span><strong id="recap-bat">—</strong></div>
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Type de projet</span><strong id="recap-projet">—</strong></div>
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Superficie / Code postal</span><strong id="recap-sup">—</strong></div>
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Nom complet</span><strong id="recap-name">—</strong></div>
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Téléphone</span><strong id="recap-tel">—</strong></div>
+              <div><span style="color:var(--gray-500);font-size:0.78rem;display:block">Email</span><strong id="recap-email">—</strong></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Précisez votre projet (optionnel)</label>
+            <textarea id="message" name="message" placeholder="Délai souhaité, contraintes particulières, questions..."></textarea>
+          </div>
+
+          <div class="scarcity-personalized" id="scarcityPersonalized">
+            &#128205; <strong id="scarcityText">Des spécialistes certifiés sont disponibles dans votre région</strong>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-prev" onclick="goStep(2)">&#8592;</button>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              &#128293; Envoyer ma demande gratuite
+            </button>
+          </div>
+          <p class="form-note">&#128274; Données protégées &bull; Jamais revendues &bull; RGPD conforme</p>
+        </div>
+
+      </div>
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">&#127881;</div>
+      <h3>Demande envoyée avec succès !</h3>
+      <p>Merci <strong id="successName"></strong> ! Votre demande a bien été transmise.</p>
+      <ul class="success-steps">
+        <li><span class="ss-num">1</span><span>Votre demande est <strong>transmise à nos partenaires spécialistes</strong> de votre région</span></li>
+        <li><span class="ss-num">2</span><span>Un ou plusieurs professionnels qualifiés <strong>vous contactent directement</strong></span></li>
+        <li><span class="ss-num">3</span><span>Vous comparez les propositions et <strong>choisissez librement</strong> — sans obligation</span></li>
+      </ul>
+      <p style="font-size:0.8rem;color:var(--gray-500)">Des questions sur notre service ?</p>
+      <a href="tel:+33100000000" class="success-phone-btn">&#128222; 01 00 00 00 00</a>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- MOBILE FLOATING CTA -->
+<div class="mobile-cta">
+  <a href="#form-card" class="mc-btn mc-devis">&#128293; Devis gratuit en 60s</a>
+  <a href="tel:+33100000000" class="mc-btn mc-tel">&#128222; Appeler</a>
+</div>
+
+<!-- LIVE TOAST NOTIFICATIONS -->
+<div class="live-toast" id="liveToast">
+  <div class="toast-avatar" id="toastInitials">JD</div>
+  <div class="toast-text">
+    <strong id="toastName">Jean D. — Paris</strong>
+    <span id="toastAction">vient de demander un devis</span>
+    <div class="toast-time" id="toastTime">il y a 2 minutes</div>
+  </div>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="overlay" id="exitOverlay">
+  <div class="popup">
+    <div class="popup-header">
+      <button class="popup-close" onclick="closePopup()">&#10005;</button>
+      <h3>&#9888; Attendez !</h3>
+      <p>Vous n'avez pas encore reçu votre devis gratuit</p>
+    </div>
+    <div class="popup-body">
+      <div class="popup-offer">
+        <strong>&#127381; Ne repartez pas sans votre devis gratuit</strong>
+        En moins de 60 secondes, décrivez votre projet et recevez des propositions de <strong>spécialistes certifiés</strong> près de chez vous — sans engagement, sans frais.
+      </div>
+      <button class="popup-btn" onclick="closePopupAndScroll()">
+        &#128293; Je veux être mis en relation gratuitement
+      </button>
+      <span class="popup-dismiss" onclick="closePopup()">Non merci, je préfère prendre des risques</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 DevisIncendie.fr &mdash;
+    <a href="#">Mentions légales</a> &bull;
+    <a href="#">Politique de confidentialité</a> &bull;
+    <a href="#">Contact</a>
+  </p>
+  <p style="margin-top:6px;">Service de mise en relation gratuit entre particuliers/professionnels et experts en sécurité incendie &mdash; Réseau de partenaires certifiés APSAD &amp; CNPP</p>
+</footer>
+
+<script>
+/* ════════════════════════════════════════
+   MULTI-STEP FORM
+════════════════════════════════════════ */
+let currentStep = 1;
+
+function goStep(n) {
+  if (n > currentStep && !validateStep(currentStep)) return;
+  if (n === 3) fillRecap();
+
+  document.getElementById('step' + currentStep).classList.remove('active');
+  document.getElementById('step' + n).classList.add('active');
+
+  for (let i = 1; i <= 3; i++) {
+    const dot = document.getElementById('dot' + i);
+    const lbl = document.getElementById('lbl' + i);
+    dot.classList.remove('active', 'done');
+    lbl.classList.remove('active');
+    if (i < n)        { dot.classList.add('done'); dot.textContent = '✓'; }
+    else if (i === n) { dot.classList.add('active'); lbl.classList.add('active'); }
+  }
+  document.getElementById('line1').classList.toggle('done', n > 1);
+  document.getElementById('line2').classList.toggle('done', n > 2);
+
+  const pct = { 1: 33, 2: 66, 3: 100 };
+  document.getElementById('progressFill').style.width = pct[n] + '%';
+  currentStep = n;
+  document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function validateStep(step) {
+  if (step === 1) {
+    let ok = true;
+    const batSelected  = document.querySelector('input[name="batiment"]:checked');
+    const projSelected = document.querySelector('input[name="projet"]:checked');
+    const sup  = document.getElementById('superficie');
+    const cp   = document.getElementById('codepostal');
+
+    document.getElementById('batimentField').style.display = batSelected  ? 'none' : 'block';
+    document.getElementById('projetField').style.display   = projSelected ? 'none' : 'block';
+    if (!batSelected || !projSelected) ok = false;
+
+    [{ el: sup, test: !sup.value || sup.value < 1 },
+     { el: cp,  test: !/^\d{5}$/.test(cp.value.trim()) }
+    ].forEach(({el, test}) => {
+      el.classList.toggle('error', test);
+      el.closest('.field').classList.toggle('has-error', test);
+      if (test) ok = false;
+    });
+    return ok;
+  }
+  if (step === 2) {
+    let ok = true;
+    ['telephone','prenom','nom','email'].forEach(id => {
+      const el = document.getElementById(id);
+      const bad = !el.value.trim() || (id === 'email' && !el.value.includes('@'));
+      el.classList.toggle('error', bad);
+      el.closest('.field').classList.toggle('has-error', bad);
+      if (bad) ok = false;
+    });
+    return ok;
+  }
+  return true;
+}
+
+function fillRecap() {
+  const bat  = document.querySelector('input[name="batiment"]:checked');
+  const proj = document.querySelector('input[name="projet"]:checked');
+  const batLabels = { maison:'Maison individuelle', appartement:'Appartement', commerce:'Commerce / Boutique', entrepot:'Entrepôt / Logistique', bureau:'Bureau / Open space', erp:'ERP', autre:'Autre' };
+  document.getElementById('recap-bat').textContent    = bat  ? (batLabels[bat.value] || bat.value) : '—';
+  document.getElementById('recap-projet').textContent = proj ? proj.value : '—';
+  const sup = document.getElementById('superficie').value;
+  const cp  = document.getElementById('codepostal').value;
+  document.getElementById('recap-sup').textContent   = (sup ? sup + ' m²' : '—') + (cp ? ' · ' + cp : '');
+  document.getElementById('recap-name').textContent  = (document.getElementById('prenom').value + ' ' + document.getElementById('nom').value).trim() || '—';
+  document.getElementById('recap-tel').textContent   = document.getElementById('telephone').value || '—';
+  document.getElementById('recap-email').textContent = document.getElementById('email').value || '—';
+
+  // Personalized scarcity
+  const batName = bat ? (batLabels[bat.value] || bat.value).toLowerCase() : 'bâtiment';
+  const cp3 = cp ? cp.slice(0, 2) : '';
+  const count = Math.floor(Math.random() * 4) + 2; // 2-5
+  document.getElementById('scarcityText').textContent =
+    count + ' spécialiste' + (count > 1 ? 's' : '') + ' en ' + (proj ? proj.value.toLowerCase() : 'sécurité incendie') +
+    ' disponible' + (count > 1 ? 's' : '') + (cp3 ? ' dans le ' + cp3 : ' dans votre région');
+}
+
+/* AUTO-ADVANCE: building card → focus superficie */
+document.querySelectorAll('input[name="batiment"]').forEach(function(radio) {
+  radio.addEventListener('change', function() {
+    setTimeout(function() {
+      const sup = document.getElementById('superficie');
+      if (!sup.value) { sup.focus(); }
+    }, 200);
+  });
+});
+
+/* AUTO-ADVANCE step 1→2 when superficie + code postal filled after building+project selected */
+['superficie','codepostal'].forEach(function(id) {
+  document.getElementById(id).addEventListener('blur', function() {
+    const bat  = document.querySelector('input[name="batiment"]:checked');
+    const proj = document.querySelector('input[name="projet"]:checked');
+    const sup  = document.getElementById('superficie').value;
+    const cp   = document.getElementById('codepostal').value;
+    if (bat && proj && sup && /^\d{5}$/.test(cp) && currentStep === 1) {
+      setTimeout(function() { goStep(2); }, 350);
+    }
+  });
+});
+
+/* ════════════════════════════════════════
+   MAKE.COM WEBHOOK — remplacez l'URL ci-dessous par votre URL Make.com
+════════════════════════════════════════ */
+const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/n29seqs24j7elaqeg4hh44d3v9nx6hkn';
+
+function showSuccess() {
+  const prenom = document.getElementById('prenom').value;
+  document.getElementById('successName').textContent = prenom;
+  document.getElementById('leadForm').style.display = 'none';
+  document.querySelector('.step-indicator').style.display = 'none';
+  document.querySelector('.step-labels').style.display = 'none';
+  document.querySelector('.progress-wrap').style.display = 'none';
+  document.querySelector('.scarcity-bar').style.display = 'none';
+  document.querySelector('.cert-badges').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  launchConfetti();
+}
+
+/* Form submit with loading state */
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('loading');
+  btn.innerHTML = '<span class="spinner"></span> Envoi en cours...';
+
+  const batSelected  = document.querySelector('input[name="batiment"]:checked');
+  const projSelected = document.querySelector('input[name="projet"]:checked');
+  const batLabels = {
+    maison: 'Maison individuelle', appartement: 'Appartement',
+    commerce: 'Commerce / Boutique', entrepot: 'Entrepôt / Logistique',
+    bureau: 'Bureau / Open space', erp: 'ERP', autre: 'Autre'
+  };
+
+  const payload = {
+    prenom:     document.getElementById('prenom').value.trim(),
+    nom:        document.getElementById('nom').value.trim(),
+    email:      document.getElementById('email').value.trim(),
+    telephone:  document.getElementById('telephone').value.trim(),
+    batiment:   batSelected  ? (batLabels[batSelected.value] || batSelected.value) : '',
+    projet:     projSelected ? projSelected.value : '',
+    superficie: document.getElementById('superficie').value,
+    codepostal: document.getElementById('codepostal').value.trim(),
+    message:    document.getElementById('message').value.trim(),
+    date:       new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })
+  };
+
+  // Envoi au webhook Make.com (qui gère Brevo côté serveur)
+  fetch(MAKE_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    showSuccess();
+  })
+  .catch(function(err) {
+    console.error('Webhook error:', err);
+    // En cas d'erreur réseau, on affiche quand même le succès côté UI
+    // pour ne pas bloquer le prospect
+    showSuccess();
+  });
+});
+
+/* ════════════════════════════════════════
+   PHONE & POSTAL FORMATTING + REAL-TIME VALIDATION
+════════════════════════════════════════ */
+document.getElementById('telephone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g, '').slice(0, 10);
+  this.value = v.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+  const field = document.getElementById('fieldTel');
+  const digits = v.length;
+  field.classList.toggle('valid', digits === 10);
+  field.classList.toggle('has-error', digits > 0 && digits < 10);
+});
+
+document.getElementById('codepostal').addEventListener('input', function() {
+  this.value = this.value.replace(/\D/g, '').slice(0, 5);
+  const cp = this.value;
+  const field = document.getElementById('fieldCodepostal');
+  if (/^\d{5}$/.test(cp)) {
+    field.classList.add('valid');
+    field.classList.remove('has-error');
+    detectRegion(cp);
+  } else {
+    field.classList.remove('valid');
+    document.getElementById('regionHint').classList.remove('show');
+  }
+});
+
+document.getElementById('email').addEventListener('input', function() {
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+  const field = document.getElementById('fieldEmail');
+  field.classList.toggle('valid', ok);
+  field.classList.toggle('has-error', this.value.length > 3 && !ok);
+});
+
+/* ════════════════════════════════════════
+   REGION DETECTION BY CODE POSTAL
+════════════════════════════════════════ */
+const regions = {
+  '01':'Ain','02':'Aisne','03':'Allier','04':'Alpes-de-Haute-Provence','05':'Hautes-Alpes',
+  '06':'Alpes-Maritimes','07':'Ardèche','08':'Ardennes','09':'Ariège','10':'Aube',
+  '11':'Aude','12':'Aveyron','13':'Bouches-du-Rhône','14':'Calvados','15':'Cantal',
+  '16':'Charente','17':'Charente-Maritime','18':'Cher','19':'Corrèze','21':'Côte-d\'Or',
+  '22':'Côtes-d\'Armor','23':'Creuse','24':'Dordogne','25':'Doubs','26':'Drôme',
+  '27':'Eure','28':'Eure-et-Loir','29':'Finistère','30':'Gard','31':'Haute-Garonne',
+  '32':'Gers','33':'Gironde','34':'Hérault','35':'Ille-et-Vilaine','36':'Indre',
+  '37':'Indre-et-Loire','38':'Isère','39':'Jura','40':'Landes','41':'Loir-et-Cher',
+  '42':'Loire','43':'Haute-Loire','44':'Loire-Atlantique','45':'Loiret','46':'Lot',
+  '47':'Lot-et-Garonne','48':'Lozère','49':'Maine-et-Loire','50':'Manche','51':'Marne',
+  '52':'Haute-Marne','53':'Mayenne','54':'Meurthe-et-Moselle','55':'Meuse','56':'Morbihan',
+  '57':'Moselle','58':'Nièvre','59':'Nord','60':'Oise','61':'Orne','62':'Pas-de-Calais',
+  '63':'Puy-de-Dôme','64':'Pyrénées-Atlantiques','65':'Hautes-Pyrénées','66':'Pyrénées-Orientales',
+  '67':'Bas-Rhin','68':'Haut-Rhin','69':'Rhône','70':'Haute-Saône','71':'Saône-et-Loire',
+  '72':'Sarthe','73':'Savoie','74':'Haute-Savoie','75':'Paris','76':'Seine-Maritime',
+  '77':'Seine-et-Marne','78':'Yvelines','79':'Deux-Sèvres','80':'Somme','81':'Tarn',
+  '82':'Tarn-et-Garonne','83':'Var','84':'Vaucluse','85':'Vendée','86':'Vienne',
+  '87':'Haute-Vienne','88':'Vosges','89':'Yonne','90':'Territoire de Belfort',
+  '91':'Essonne','92':'Hauts-de-Seine','93':'Seine-Saint-Denis','94':'Val-de-Marne',
+  '95':'Val-d\'Oise','971':'Guadeloupe','972':'Martinique','973':'Guyane','974':'La Réunion'
+};
+function detectRegion(cp) {
+  const dept = cp.slice(0, 2);
+  const region = regions[dept] || null;
+  const hint = document.getElementById('regionHint');
+  const name = document.getElementById('regionName');
+  if (region) {
+    name.textContent = region + ' — spécialistes disponibles';
+    hint.classList.add('show');
+  } else {
+    hint.classList.remove('show');
+  }
+}
+
+/* ════════════════════════════════════════
+   COUNTDOWN TIMER — crédible (18-28 min aléatoire)
+════════════════════════════════════════ */
+let countdownSec = (18 + Math.floor(Math.random() * 10)) * 60 + Math.floor(Math.random() * 60);
+setInterval(function() {
+  if (countdownSec <= 0) return; // s'arrête à 0, ne repart pas
+  countdownSec--;
+  const m = String(Math.floor(countdownSec / 60)).padStart(2, '0');
+  const s = String(countdownSec % 60).padStart(2, '0');
+  const el = document.getElementById('countdownTimer');
+  if (el) el.textContent = m + ':' + s;
+}, 1000);
+
+/* ════════════════════════════════════════
+   PERSONALIZED SUBMIT BUTTON
+════════════════════════════════════════ */
+const batLabelsBtn = {
+  maison: 'ma maison', appartement: 'mon appartement',
+  commerce: 'mon commerce', entrepot: 'mon entrepôt',
+  bureau: 'mes bureaux', erp: 'mon ERP', autre: 'mon bâtiment'
+};
+document.querySelectorAll('input[name="batiment"]').forEach(function(r) {
+  r.addEventListener('change', function() {
+    const btn = document.getElementById('submitBtn');
+    if (btn) btn.innerHTML = '&#128293; Sécuriser ' + (batLabelsBtn[this.value] || 'mon bâtiment') + ' gratuitement';
+  });
+});
+
+/* ════════════════════════════════════════
+   MATCH SCORE (step 3)
+════════════════════════════════════════ */
+function updateMatchScore() {
+  const count = 2 + Math.floor(Math.random() * 4);
+  const pct = 88 + Math.floor(Math.random() * 10);
+  const el = document.getElementById('matchCount');
+  const pctEl = document.getElementById('matchPct');
+  const circleEl = document.querySelector('.match-circle circle:last-child');
+  if (el) el.textContent = count;
+  if (pctEl) pctEl.textContent = pct + '%';
+  if (circleEl) {
+    const dash = Math.round(pct * 100 / 100);
+    circleEl.setAttribute('stroke-dasharray', dash + ' 100');
+  }
+}
+
+/* Override fillRecap to also update match score */
+const _origFillRecap = fillRecap;
+fillRecap = function() { _origFillRecap(); updateMatchScore(); };
+
+/* ════════════════════════════════════════
+   TAB TITLE BLINK (ramène les abandonneurs)
+════════════════════════════════════════ */
+const originalTitle = document.title;
+let titleBlink;
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    let toggle = false;
+    titleBlink = setInterval(function() {
+      document.title = toggle ? '⚠️ Votre devis vous attend...' : originalTitle;
+      toggle = !toggle;
+    }, 1500);
+  } else {
+    clearInterval(titleBlink);
+    document.title = originalTitle;
+  }
+});
+
+/* ════════════════════════════════════════
+   CONFETTI (succès)
+════════════════════════════════════════ */
+function launchConfetti() {
+  const colors = ['#c0392b','#e67e22','#27ae60','#3498db','#f1c40f','#e74c3c','#2ecc71'];
+  for (let i = 0; i < 80; i++) {
+    setTimeout(function() {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.cssText = [
+        'left:' + Math.random() * 100 + 'vw',
+        'background:' + colors[Math.floor(Math.random() * colors.length)],
+        'width:' + (6 + Math.random() * 8) + 'px',
+        'height:' + (6 + Math.random() * 8) + 'px',
+        'border-radius:' + (Math.random() > 0.5 ? '50%' : '2px'),
+        'animation-duration:' + (1.5 + Math.random() * 2) + 's',
+        'animation-delay:0s'
+      ].join(';');
+      document.body.appendChild(el);
+      setTimeout(function() { el.remove(); }, 3500);
+    }, i * 30);
+  }
+}
+
+/* ════════════════════════════════════════
+   LIVE SOCIAL PROOF NOTIFICATIONS
+════════════════════════════════════════ */
+const notifications = [
+  { initials:'ML', name:'Marc L. — Lyon',        action:'vient de soumettre une demande',          time:'il y a 1 minute'   },
+  { initials:'SF', name:'Sophie F. — Paris',     action:'a été mise en relation avec un spécialiste', time:'il y a 3 minutes'  },
+  { initials:'TR', name:'Thomas R. — Bordeaux',  action:'a reçu 3 devis comparatifs',               time:'il y a 5 minutes'  },
+  { initials:'AC', name:'Amélie C. — Marseille', action:'vient de déposer une demande ERP',          time:'il y a 7 minutes'  },
+  { initials:'PB', name:'Pierre B. — Toulouse',  action:'a comparé et choisi son prestataire',       time:'il y a 9 minutes'  },
+  { initials:'LD', name:'Laura D. — Nantes',     action:'vient de soumettre une demande commerce',   time:'il y a 11 minutes' },
+];
+let nIdx = 0;
+
+function showToast(notif) {
+  const toast = document.getElementById('liveToast');
+  document.getElementById('toastInitials').textContent = notif.initials;
+  document.getElementById('toastName').textContent     = notif.name;
+  document.getElementById('toastAction').textContent   = notif.action;
+  document.getElementById('toastTime').textContent     = notif.time;
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); }, 4500);
+}
+
+setTimeout(() => {
+  showToast(notifications[nIdx]);
+  nIdx = (nIdx + 1) % notifications.length;
+  setInterval(() => {
+    showToast(notifications[nIdx]);
+    nIdx = (nIdx + 1) % notifications.length;
+  }, 14000);
+}, 5000);
+
+/* ════════════════════════════════════════
+   CRÉNEAUX — contexte semaine / week-end
+════════════════════════════════════════ */
+(function() {
+  const now   = new Date();
+  const day   = now.getDay(); // 0=dim, 1=lun … 6=sam
+  const hour  = now.getHours();
+  const isWeekend = (day === 0 || day === 6);
+  const isLateEvening = hour >= 19; // après 19h en semaine
+
+  // Nombre de créneaux : moins le lundi matin (tout le monde réserve)
+  // plus disponible le week-end (personne ne réserve)
+  let slots, label;
+
+  if (isWeekend) {
+    slots = 5 + Math.floor(Math.random() * 4); // 5-8 créneaux
+    label = 'créneaux disponibles dès lundi';
+  } else if (day === 1 && hour < 12) {
+    slots = 2; // lundi matin : presque complet
+    label = 'créneaux restants cette semaine';
+  } else if (isLateEvening) {
+    slots = 3 + Math.floor(Math.random() * 3);
+    label = 'créneaux disponibles cette semaine';
+  } else {
+    slots = 2 + Math.floor(Math.random() * 3); // 2-4
+    label = 'créneaux disponibles cette semaine';
+  }
+
+  // Mise à jour top bar
+  const slotsEl = document.getElementById('slotsLeft');
+  const labelEl = document.getElementById('slotsWeekLabel');
+  if (slotsEl) slotsEl.textContent = slots;
+  if (labelEl) labelEl.textContent = label;
+
+  // Mise à jour scarcity bar formulaire
+  const formSlotsEl = document.getElementById('formSlots');
+  const formLabelEl = document.getElementById('formSlotsLabel');
+  if (formSlotsEl) formSlotsEl.textContent = slots;
+  if (formLabelEl) formLabelEl.textContent = label;
+})();
+
+/* ════════════════════════════════════════
+   ACTIVE USERS COUNTER (random fluctuation)
+════════════════════════════════════════ */
+let activeCount = 14;
+setInterval(() => {
+  activeCount += (Math.random() > 0.5 ? 1 : -1);
+  activeCount = Math.max(8, Math.min(22, activeCount));
+  const el = document.getElementById('activeUsers');
+  if (el) el.textContent = activeCount;
+}, 8000);
+
+/* ════════════════════════════════════════
+   STICKY HEADER CTA (show after hero)
+════════════════════════════════════════ */
+const ctaBtn = document.getElementById('headerCtaBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    ctaBtn.style.display = 'block';
+  } else {
+    ctaBtn.style.display = 'none';
+  }
+}, { passive: true });
+
+/* ════════════════════════════════════════
+   EXIT INTENT — timed (8s) + desktop mouseleave + mobile inactivity 40s
+════════════════════════════════════════ */
+let exitShown = false;
+function triggerExit() {
+  if (!exitShown && currentStep < 3) {
+    exitShown = true;
+    setTimeout(function() {
+      document.getElementById('exitOverlay').classList.add('show');
+    }, 300);
+  }
+}
+
+// Apparition automatique après 8 secondes sur la page
+setTimeout(triggerExit, 8000);
+
+// Desktop: mouse leaves toward top
+document.addEventListener('mouseleave', function(e) {
+  if (e.clientY < 50) triggerExit();
+});
+// Mobile: 40s inactivity
+let inactivityTimer;
+function resetInactivity() {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(triggerExit, 40000);
+}
+['touchstart','touchmove','scroll','click'].forEach(function(ev) {
+  document.addEventListener(ev, resetInactivity, { passive: true });
+});
+resetInactivity();
+
+function closePopup() {
+  document.getElementById('exitOverlay').classList.remove('show');
+}
+function closePopupAndScroll() {
+  closePopup();
+  document.getElementById('form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+document.getElementById('exitOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+</script>
+
+</body>
+</html>
