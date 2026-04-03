@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="shieldGradD" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#7b1d13"/>
+    </linearGradient>
+    <linearGradient id="flameGradD" x1="0%" y1="100%" x2="10%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#F39C12"/>
+    </linearGradient>
+    <filter id="shadowD">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="400" height="120" fill="#1a2530" rx="8"/>
+
+  <!-- Shield -->
+  <path d="M56 8 L16 22 L16 60 C16 84 34 100 56 108 C78 100 96 84 96 60 L96 22 Z"
+        fill="url(#shieldGradD)" filter="url(#shadowD)"/>
+  <path d="M56 14 L22 27 L22 60 C22 82 38 96 56 103 C74 96 90 82 90 60 L90 27 Z"
+        fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Flame white -->
+  <path d="M56 94 C45 85 38 72 40 58 C41 50 46 43 51 38 C49 46 53 52 56 53 C54 45 56 36 62 28 C63 38 59 48 63 54 C67 47 68 39 66 32 C74 43 77 56 75 67 C73 81 65 91 56 94Z"
+        fill="url(#flameGradD)"/>
+  <path d="M56 86 C50 79 47 70 49 61 C50 56 53 51 56 48 C55 54 57 59 59 60 C58 53 60 46 64 40 C65 49 62 57 65 62 C68 57 68 51 66 45 C71 53 73 63 71 72 C69 81 63 87 56 86Z"
+        fill="#F39C12" opacity="0.65"/>
+
+  <!-- Wordmark on dark -->
+  <text x="115" y="50"
+        font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="28" font-weight="700" fill="#f1f5f9" letter-spacing="-0.3">Securite</text>
+  <text x="237" y="50"
+        font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="28" font-weight="300" fill="#cbd5e1" letter-spacing="0.5">Incendie</text>
+  <text x="359" y="50"
+        font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="28" font-weight="800" fill="#e74c3c" letter-spacing="-0.5">Pro</text>
+
+  <line x1="115" y1="59" x2="392" y2="59" stroke="rgba(255,255,255,0.1)" stroke-width="0.75"/>
+
+  <text x="115" y="76"
+        font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="10.5" font-weight="400" fill="#64748b" letter-spacing="2.2">EXPERTS CERTIFIÉS  •  DEVIS GRATUIT</text>
+
+  <rect x="115" y="85" width="46" height="14" rx="3" fill="#C0392B" opacity="0.9"/>
+  <text x="138" y="95.5" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">APSAD</text>
+
+  <rect x="167" y="85" width="40" height="14" rx="3" fill="rgba(255,255,255,0.12)"/>
+  <text x="187" y="95.5" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">CNPP</text>
+
+  <rect x="213" y="85" width="28" height="14" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <text x="227" y="95.5" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="1">NF</text>
+
+</svg>
