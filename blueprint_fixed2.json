@@ -1,0 +1,256 @@
+{
+    "name": "Publication Réseaux Sociaux Automatique",
+    "flow": [
+        {
+            "id": 1,
+            "module": "http:MakeRequest",
+            "version": 4,
+            "parameters": {
+                "tlsType": "",
+                "proxyKeychain": "",
+                "authenticationType": "noAuth"
+            },
+            "mapper": {
+                "url": "https://raw.githubusercontent.com/wloureiro67-del/securite-incendie/main/seo/content-bank.md",
+                "method": "get",
+                "shareCookies": false,
+                "parseResponse": false,
+                "allowRedirects": true,
+                "stopOnHttpError": true,
+                "requestCompressedContent": true
+            },
+            "metadata": {
+                "designer": { "x": -1200, "y": 0 },
+                "restore": {
+                    "expect": {
+                        "method": { "mode": "chose", "label": "GET" },
+                        "headers": { "mode": "chose" },
+                        "contentType": { "label": "Empty" },
+                        "shareCookies": { "mode": "chose" },
+                        "parseResponse": { "mode": "chose" },
+                        "allowRedirects": { "mode": "chose" },
+                        "queryParameters": { "mode": "chose" },
+                        "stopOnHttpError": { "mode": "chose" },
+                        "requestCompressedContent": { "mode": "chose" }
+                    },
+                    "parameters": {
+                        "tlsType": { "label": "Empty" },
+                        "proxyKeychain": { "label": "Choose a key" },
+                        "authenticationType": { "label": "No authenticationUse when no credentials are required for the request." }
+                    }
+                },
+                "parameters": [
+                    { "name": "authenticationType", "type": "select", "label": "Authentication type", "required": true, "validate": { "enum": ["noAuth","apiKey","basicAuth","oAuth"] } },
+                    { "name": "tlsType", "type": "select", "label": "Transport layer security (TLS)", "validate": { "enum": ["mTls","tls"] } },
+                    { "name": "proxyKeychain", "type": "keychain:proxy", "label": "Proxy" }
+                ],
+                "expect": [
+                    { "name": "url", "type": "url", "label": "URL", "required": true },
+                    { "name": "method", "type": "select", "label": "Method", "required": true, "validate": { "enum": ["get","head","post","put","patch","delete","options"] } },
+                    { "name": "parseResponse", "type": "boolean", "label": "Parse response", "required": true },
+                    { "name": "stopOnHttpError", "type": "boolean", "label": "Return error if HTTP request fails", "required": true },
+                    { "name": "allowRedirects", "type": "boolean", "label": "Allow redirects", "required": true },
+                    { "name": "shareCookies", "type": "boolean", "label": "Share cookies with other HTTP modules", "required": true },
+                    { "name": "requestCompressedContent", "type": "boolean", "label": "Request compressed content", "required": true }
+                ],
+                "interface": [
+                    { "name": "data", "type": "any", "label": "Data" },
+                    { "name": "statusCode", "type": "number", "label": "Status Code" }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "module": "builtin:SetVariable",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "name": "dayCode",
+                "scope": "roundtrip",
+                "value": "{{if(formatDate(now; \"E\") = \"Mon\"; \"LUN\"; if(formatDate(now; \"E\") = \"Wed\"; \"MER\"; \"VEN\"))}}"
+            },
+            "metadata": {
+                "designer": { "x": -900, "y": 0 },
+                "restore": {
+                    "expect": {
+                        "scope": { "label": "One cycle" }
+                    }
+                },
+                "parameters": [],
+                "expect": [
+                    { "name": "name", "type": "text", "label": "Variable name", "required": true },
+                    { "name": "scope", "type": "select", "label": "Variable lifetime", "required": true, "validate": { "enum": ["roundtrip", "execution"] } },
+                    { "name": "value", "type": "any", "label": "Variable value" }
+                ],
+                "interface": [
+                    { "name": "dayCode", "type": "any", "label": "dayCode" }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "regexp:Parser",
+            "version": 1,
+            "parameters": {
+                "global": false,
+                "sensitive": true,
+                "multiline": false,
+                "singleline": true,
+                "continueWhenNoRes": false,
+                "pattern": "POST_{{9.dayCode}}_LK_\\d+:(.+?)(?=---)"
+            },
+            "mapper": {
+                "text": "{{1.data}}"
+            },
+            "metadata": {
+                "designer": { "x": -600, "y": 0 },
+                "restore": {},
+                "parameters": [
+                    { "name": "pattern", "type": "text", "label": "Pattern", "required": true },
+                    { "name": "global", "type": "boolean", "label": "Global match", "required": true },
+                    { "name": "sensitive", "type": "boolean", "label": "Case sensitive", "required": true },
+                    { "name": "multiline", "type": "boolean", "label": "Multiline", "required": true },
+                    { "name": "singleline", "type": "boolean", "label": "Singleline", "required": true },
+                    { "name": "continueWhenNoRes", "type": "boolean", "label": "Continue the execution of the route even if the module finds no matches", "required": true }
+                ],
+                "expect": [{ "name": "text", "type": "text", "label": "Text" }]
+            }
+        },
+        {
+            "id": 3,
+            "module": "regexp:Parser",
+            "version": 1,
+            "parameters": {
+                "global": false,
+                "sensitive": true,
+                "multiline": false,
+                "singleline": true,
+                "continueWhenNoRes": false,
+                "pattern": "POST_{{9.dayCode}}_FB_\\d+:(.+?)(?=---)"
+            },
+            "mapper": {
+                "text": "{{1.data}}"
+            },
+            "metadata": {
+                "designer": { "x": -300, "y": 0 },
+                "restore": {},
+                "parameters": [
+                    { "name": "pattern", "type": "text", "label": "Pattern", "required": true },
+                    { "name": "global", "type": "boolean", "label": "Global match", "required": true },
+                    { "name": "sensitive", "type": "boolean", "label": "Case sensitive", "required": true },
+                    { "name": "multiline", "type": "boolean", "label": "Multiline", "required": true },
+                    { "name": "singleline", "type": "boolean", "label": "Singleline", "required": true },
+                    { "name": "continueWhenNoRes", "type": "boolean", "label": "Continue the execution of the route even if the module finds no matches", "required": true }
+                ],
+                "expect": [{ "name": "text", "type": "text", "label": "Text" }]
+            }
+        },
+        {
+            "id": 4,
+            "module": "buffer:ActionCreateStatus",
+            "version": 2,
+            "parameters": { "account": 6375306 },
+            "mapper": {
+                "text": "{{trim(2.$1)}}",
+                "type": "now",
+                "shorten": true,
+                "useMedia": false,
+                "attachment": false,
+                "profileIds": ["69cec645af47dacb69815d7e"]
+            },
+            "metadata": {
+                "designer": { "x": 0, "y": 0 },
+                "restore": {
+                    "expect": {
+                        "type": { "label": "Post immediately " },
+                        "shorten": { "mode": "chose" },
+                        "attachment": { "mode": "chose" },
+                        "profileIds": { "mode": "chose", "label": ["LinkedIn Page (sécurité-incendie-pro)"] }
+                    },
+                    "parameters": {
+                        "account": { "data": { "scoped": "true", "connection": "buffer" }, "label": "My Buffer connection (Sécurité Incendie Pro)" }
+                    }
+                },
+                "parameters": [{ "name": "account", "type": "account:buffer", "label": "Connection", "required": true }],
+                "expect": [
+                    { "name": "profileIds", "type": "select", "label": "Profiles", "multiple": true, "required": true },
+                    { "name": "text", "type": "text", "label": "Text", "required": true },
+                    { "name": "type", "type": "select", "label": "Publication", "required": true, "validate": { "enum": ["now","top","queue","scheduled"] } },
+                    { "name": "useMedia", "type": "boolean", "label": "Attach media to the update", "required": true },
+                    { "name": "shorten", "type": "boolean", "label": "Shorten links within text", "required": true },
+                    { "name": "attachment", "type": "boolean", "label": "Attach links in the text as media", "required": true }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "buffer:ActionCreateStatus",
+            "version": 2,
+            "parameters": { "account": 6375306 },
+            "mapper": {
+                "text": "{{trim(3.$1)}}",
+                "type": "now",
+                "shorten": true,
+                "useMedia": false,
+                "attachment": false,
+                "profileIds": ["69cec5d7af47dacb69815bee"]
+            },
+            "metadata": {
+                "designer": { "x": 300, "y": 0 },
+                "restore": {
+                    "expect": {
+                        "type": { "label": "Post immediately " },
+                        "shorten": { "mode": "chose" },
+                        "attachment": { "mode": "chose" },
+                        "profileIds": { "mode": "chose", "label": ["Facebook Page (Sécurité Incendie Pro)"] }
+                    },
+                    "parameters": {
+                        "account": { "data": { "scoped": "true", "connection": "buffer" }, "label": "My Buffer connection (Sécurité Incendie Pro)" }
+                    }
+                },
+                "parameters": [{ "name": "account", "type": "account:buffer", "label": "Connection", "required": true }],
+                "expect": [
+                    { "name": "profileIds", "type": "select", "label": "Profiles", "multiple": true, "required": true },
+                    { "name": "text", "type": "text", "label": "Text", "required": true },
+                    { "name": "type", "type": "select", "label": "Publication", "required": true, "validate": { "enum": ["now","top","queue","scheduled"] } },
+                    { "name": "useMedia", "type": "boolean", "label": "Attach media to the update", "required": true },
+                    { "name": "shorten", "type": "boolean", "label": "Shorten links within text", "required": true },
+                    { "name": "attachment", "type": "boolean", "label": "Attach links in the text as media", "required": true }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "module": "sendinblue:SendEmail",
+            "version": 2,
+            "parameters": { "__IMTCONN__": 6268637 },
+            "mapper": {
+                "to": [{ "name": "William", "email": "wloureiro67@gmail.com" }],
+                "subject": "✅ Posts publiés - {{formatDate(now; \"DD/MM/YYYY\")}}",
+                "textContent": "Posts {{formatDate(now; \"dddd DD/MM\")}} :\n\nLINKEDIN :\n{{trim(2.$1)}}\n\nFACEBOOK :\n{{trim(3.$1)}}"
+            },
+            "metadata": {
+                "designer": { "x": 600, "y": 0 }
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": { "orphans": [] },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(start \"C:\\\\Users\\\\200VEN09\\\\securite-incendie\\\\leads-securite-incendie.csv\")",
+      "Bash(zip -r \"/tmp/seo-army.plugin\" .)",
+      "Read(//tmp/**)",
+      "Bash(powershell -Command \"Compress-Archive -Path ''C:\\\\Users\\\\200VEN09\\\\seo-army\\\\*'' -DestinationPath ''C:\\\\Users\\\\200VEN09\\\\seo-army.plugin.zip'' -Force; Write-Host ''Package créé''; \\(Get-Item ''C:\\\\Users\\\\200VEN09\\\\seo-army.plugin.zip''\\).Length\")",
+      "Bash(vercel --prod)",
+      "Bash(python3 -:*)",
+      "Bash(python -:*)",
+      "Bash(cygpath -w /tmp/logo_b64.txt)",
+      "Bash(ls -la C:/Users/200VEN09/Downloads/*.json)",
+      "Bash(find ~/Downloads -name *.json -newer ~/Downloads/06.051..png)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(m.get\\(''''module'''',''''?''''\\), m.get\\(''''id'''',''''?''''\\)\\) for m in d.get\\(''''flow'''',[]\\)]\")",
+      "Bash(powershell -command \"Get-Content ''''C:/Users/200VEN09/Downloads/Integration Webhooks, Google Sheets.blueprint.json'''' | ConvertFrom-Json | Select-Object -ExpandProperty flow | Format-List module, id\")",
+      "Bash(python3 -c \"import json; data = open\\(''C:/Users/200VEN09/Downloads/new-blueprint.json'', encoding=''utf-8''\\).read\\(\\); json.loads\\(data\\); print\\(''JSON valide, taille:'', len\\(data\\), ''chars''\\)\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const data=fs.readFileSync\\(''C:/Users/200VEN09/Downloads/new-blueprint.json'',''utf8''\\); JSON.parse\\(data\\); console.log\\(''JSON valide, taille:'', data.length, ''chars''\\);\")",
+      "Bash(curl -s -o NUL -w \"%{http_code} %{size_download}\" http://localhost:9877)",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const data=fs.readFileSync\\(''C:/Users/200VEN09/Downloads/new-blueprint.json''\\); console.log\\(data.toString\\(''base64''\\)\\);\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const b=fs.readFileSync\\(''C:/Users/200VEN09/Downloads/bp_b64.txt'',''utf8''\\).trim\\(\\); console.log\\(b.length, b.substring\\(0,50\\)\\);\")",
+      "Bash(node -e \"const fs=require\\(''fs''\\); const data=fs.readFileSync\\(''C:/Users/200VEN09/Downloads/new-blueprint.json''\\); const b64=data.toString\\(''base64''\\); console.log\\(b64.length\\);\")",
+      "Bash(node C:/Users/200VEN09/Downloads/make_chunks.js)",
+      "Bash(dir \"C:\\\\Users\\\\200VEN09\\\\securite-incendie\\\\seo\" /b)",
+      "Bash(dir \"C:\\\\Users\\\\200VEN09\\\\securite-incendie\" /b)",
+      "Bash(git remote:*)",
+      "mcp__Claude_in_Chrome__computer"
+    ]
+  }
+}

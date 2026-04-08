@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Export Logo — Securite Incendie Pro</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f1f5f9; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 32px; }
+    h1 { font-size: 1.2rem; color: #1e293b; font-weight: 700; }
+    .card { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 560px; }
+    .card h2 { font-size: 0.85rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+    canvas { max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; }
+    .btn {
+      display: inline-block; margin-top: 16px;
+      background: #C0392B; color: white;
+      font-weight: 700; font-size: 0.9rem;
+      padding: 11px 28px; border-radius: 8px;
+      cursor: pointer; border: none; text-decoration: none;
+      transition: filter 0.15s;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .bg-dark { background: #1a2530; }
+  </style>
+</head>
+<body>
+
+<h1>Export Logo — Securite Incendie Pro</h1>
+
+<!-- Logo horizontal fond blanc -->
+<div class="card">
+  <h2>Logo horizontal — fond blanc (web, documents)</h2>
+  <canvas id="c1"></canvas>
+  <br>
+  <button class="btn" onclick="download('c1','logo-securite-incendie-pro.png')">⬇ Télécharger PNG</button>
+</div>
+
+<!-- Logo Google Business -->
+<div class="card">
+  <h2>Google Business — carré 1200×1200</h2>
+  <canvas id="c2" style="max-width:300px;"></canvas>
+  <br>
+  <button class="btn" onclick="download('c2','logo-google-business-1200x1200.png')">⬇ Télécharger PNG</button>
+</div>
+
+<script>
+function renderSVG(svgUrl, canvasId, w, h) {
+  const canvas = document.getElementById(canvasId);
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+  img.onload = () => ctx.drawImage(img, 0, 0, w, h);
+  img.src = svgUrl;
+}
+
+function download(canvasId, filename) {
+  const canvas = document.getElementById(canvasId);
+  const a = document.createElement('a');
+  a.download = filename;
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+}
+
+// Render both logos
+renderSVG('logo.svg', 'c1', 920, 240);
+renderSVG('logo-google-business.svg', 'c2', 1200, 1200);
+</script>
+
+</body>
+</html>
