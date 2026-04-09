@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{"type": "host", "value": "www.securiteincendiepro.fr"}],
+      "destination": "https://securiteincendiepro.fr/$1",
+      "permanent": true
+    }
+  ]
+}
