@@ -146,6 +146,12 @@
       .blog-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+<style>
+.header-nav{display:flex;gap:20px;align-items:center}
+.header-nav a{color:white;text-decoration:none;font-size:.85rem;font-weight:600;opacity:.9}
+.header-nav a:hover{opacity:1;text-decoration:underline}
+@media(max-width:640px){.header-nav{display:none}}
+</style>
 </head>
 <body>
 
@@ -159,6 +165,12 @@
     <a href="index.html#form-card" class="nav-link">&#128293; Devis gratuit</a>
     <a href="tel:+33775754921" class="phone-btn">&#128222; 07 75 75 49 21</a>
   </div>
+<nav class="header-nav">
+  <a href="/blog.html">Blog</a>
+  <a href="/diagnostic-incendie-entreprise.html">Diagnostic</a>
+  <a href="/extincteur-obligatoire-entreprise.html">Extincteurs</a>
+  <a href="/normes-securite-incendie-erp.html">Normes ERP</a>
+</nav>
 </header>
 
 <div class="blog-hero">
