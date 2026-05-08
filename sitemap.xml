@@ -4,91 +4,127 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://securiteincendiepro.fr/</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://www.securiteincendiepro.fr/</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/diagnostic-incendie-entreprise.html</loc>
+    <loc>https://www.securiteincendiepro.fr/diagnostic-incendie-entreprise.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/extincteur-obligatoire-entreprise.html</loc>
+    <loc>https://www.securiteincendiepro.fr/extincteur-obligatoire-entreprise.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/normes-securite-incendie-erp.html</loc>
+    <loc>https://www.securiteincendiepro.fr/normes-securite-incendie-erp.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/mise-aux-normes-incendie.html</loc>
+    <loc>https://www.securiteincendiepro.fr/mise-aux-normes-incendie.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/securite-incendie-strasbourg.html</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://securiteincendiepro.fr/blog.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://www.securiteincendiepro.fr/blog.html</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/plan-intervention-incendie-obligatoire-erp-2026.html</loc>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-strasbourg.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-mulhouse.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-colmar.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-haguenau.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-selestat.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-saverne.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-obernai.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/articles/plan-intervention-incendie-obligatoire-erp-2026.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/extincteur-obligatoire-entreprise-reglementation-2026.html</loc>
+    <loc>https://www.securiteincendiepro.fr/articles/extincteur-obligatoire-entreprise-reglementation-2026.html</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/norme-incendie-erp-guide-complet-obligations-2026.html</loc>
+    <loc>https://www.securiteincendiepro.fr/articles/norme-incendie-erp-guide-complet-obligations-2026.html</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/installation-alarme-incendie.html</loc>
+    <loc>https://www.securiteincendiepro.fr/articles/installation-alarme-incendie.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/mise-en-conformite-erp.html</loc>
+    <loc>https://www.securiteincendiepro.fr/articles/mise-en-conformite-erp.html</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/articles/extincteurs-entreprise.html</loc>
+    <loc>https://www.securiteincendiepro.fr/articles/extincteurs-entreprise.html</loc>
     <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/mentions-legales.html</loc>
+    <loc>https://www.securiteincendiepro.fr/mentions-legales.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://securiteincendiepro.fr/politique-confidentialite.html</loc>
+    <loc>https://www.securiteincendiepro.fr/politique-confidentialite.html</loc>
     <lastmod>2026-03-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
