@@ -136,6 +136,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-paris.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-lyon.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-marseille.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-bordeaux.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/securite-incendie-lille.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.securiteincendiepro.fr/articles/plan-intervention-incendie-obligatoire-erp-2026.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,6 +200,24 @@
     <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/articles/checklist-securite-incendie-restaurant-2026.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/articles/commission-securite-erp-comment-se-preparer.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.securiteincendiepro.fr/articles/securite-incendie-entrepot-logistique-obligations-2026.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.securiteincendiepro.fr/mentions-legales.html</loc>
