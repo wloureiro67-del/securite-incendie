@@ -434,22 +434,46 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Multi-step hero form ── */
   initHeroForm();
 
-  /* ── Formulaires génériques (.lead-form) ── */
+  /* ── Formulaires génériques (.lead-form) — 2 étapes si présentes ── */
   document.querySelectorAll('.lead-form').forEach(form => {
-    const btn     = form.querySelector('.btn-cta');
-    const wrapper = form.closest('.final-form-card, .form-card, .sidebar-form');
-    const success = wrapper ? wrapper.querySelector('.form-success') : null;
+    const wrapper   = form.closest('.final-form-card, .form-card, .sidebar-form');
+    const success   = wrapper ? wrapper.querySelector('.form-success') : null;
+    const submitBtn = form.querySelector('[type="submit"]');
+    const steps     = form.querySelectorAll('.form-step');
 
     const telInput = form.querySelector('[name="telephone"]');
-    if (telInput) {
-      telInput.addEventListener('input', function() {
-        this.value = formatPhone(this.value);
+    if (telInput) telInput.addEventListener('input', function() {
+      this.value = formatPhone(this.value);
+    });
+
+    if (steps.length >= 2) {
+      const nextBtn  = form.querySelector('.step-next-btn');
+      const backLink = form.querySelector('.step-back-link');
+
+      if (nextBtn) nextBtn.addEventListener('click', () => {
+        const step1Fields = form.querySelectorAll('.form-step[data-step="1"] [required]');
+        let ok = true;
+        step1Fields.forEach(el => {
+          const valid = el.value.trim() !== '';
+          el.classList.toggle('error', !valid);
+          el.closest('.field')?.classList.toggle('has-err', !valid);
+          if (!valid) ok = false;
+        });
+        if (!ok) return;
+        steps.forEach(s => s.classList.remove('active'));
+        form.querySelector('.form-step[data-step="2"]').classList.add('active');
+      });
+
+      if (backLink) backLink.addEventListener('click', e => {
+        e.preventDefault();
+        steps.forEach(s => s.classList.remove('active'));
+        form.querySelector('.form-step[data-step="1"]').classList.add('active');
       });
     }
 
     form.addEventListener('submit', e => {
       e.preventDefault();
-      submitForm(form, btn, success);
+      submitForm(form, submitBtn, success);
     });
   });
 

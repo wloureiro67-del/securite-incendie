@@ -168,9 +168,10 @@
       </div>
       <div class="form-card-body">
         <form class="lead-form" id="formNancy" novalidate>
-          <div class="field">
-            <label for="type_local_ncy">Type de local *</label>
-            <select name="type_local" id="type_local_ncy" required>
+          <div class="form-step active" data-step="1">
+            <div class="field">
+              <label for="type_local_ncy">Type de local *</label>
+              <select name="type_local" id="type_local_ncy" required>
               <option value="">-- Sélectionnez --</option>
               <option value="Restaurant / Bar">Restaurant / Bar</option>
               <option value="Commerce / Boutique">Commerce / Boutique</option>
@@ -181,43 +182,49 @@
               <option value="Salle de sport / Loisirs">Salle de sport / Loisirs</option>
               <option value="Industrie / Atelier">Industrie / Atelier</option>
               <option value="Autre ERP">Autre ERP</option>
-            </select>
+              </select>
+            </div>
+            <div class="field">
+              <label for="surface_ncy">Surface approximative *</label>
+              <select name="surface" id="surface_ncy" required>
+                <option value="">-- Sélectionnez --</option>
+                <option value="Moins de 100 m²">Moins de 100 m²</option>
+                <option value="100 à 300 m²">100 à 300 m²</option>
+                <option value="300 à 1000 m²">300 à 1 000 m²</option>
+                <option value="Plus de 1000 m²">Plus de 1 000 m²</option>
+              </select>
+            </div>
+            <button type="button" class="btn-cta step-next-btn">Continuer →</button>
+            <p class="form-trust">🔒 Données protégées — Sans engagement</p>
           </div>
-          <div class="field">
-            <label for="surface_ncy">Surface approximative *</label>
-            <select name="surface" id="surface_ncy" required>
-              <option value="">-- Sélectionnez --</option>
-              <option value="Moins de 100 m²">Moins de 100 m²</option>
-              <option value="100 à 300 m²">100 à 300 m²</option>
-              <option value="300 à 1000 m²">300 à 1 000 m²</option>
-              <option value="Plus de 1000 m²">Plus de 1 000 m²</option>
-            </select>
+          <div class="form-step" data-step="2">
+            <a href="#" class="step-back-link" aria-label="Retour à l'étape précédente">← Retour</a>
+            <div class="field">
+              <label for="nom_ncy">Votre nom *</label>
+              <input type="text" name="nom" id="nom_ncy" placeholder="Votre nom" required autocomplete="family-name">
+            </div>
+            <div class="field">
+              <label for="entreprise_ncy">Nom de l'entreprise</label>
+              <input type="text" name="entreprise" id="entreprise_ncy" placeholder="Nom de votre entreprise (optionnel)" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="telephone_ncy">Téléphone *</label>
+              <input type="tel" name="telephone" id="telephone_ncy" placeholder="06 XX XX XX XX" required>
+            </div>
+            <div class="field">
+              <label for="email_ncy">Email professionnel *</label>
+              <input type="email" name="email" id="email_ncy" placeholder="vous@entreprise.fr" required>
+            </div>
+            <div class="field">
+              <label for="codepostal_ncy">Code postal *</label>
+              <input type="text" name="codepostal" id="codepostal_ncy" placeholder="Ex: 67000" required pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+            </div>
+            <div class="field">
+              <label for="description_ncy">Description du projet</label>
+              <textarea name="description" id="description_ncy" rows="3" placeholder="Décrivez brièvement votre besoin (optionnel)..."></textarea>
+            </div>
+            <button type="submit" class="btn-cta">Diagnostic gratuit Nancy →</button>
           </div>
-          <div class="field">
-            <label for="nom_ncy">Votre nom *</label>
-            <input type="text" name="nom" id="nom_ncy" placeholder="Votre nom" required autocomplete="family-name">
-          </div>
-          <div class="field">
-            <label for="entreprise_ncy">Nom de l'entreprise</label>
-            <input type="text" name="entreprise" id="entreprise_ncy" placeholder="Nom de votre entreprise (optionnel)" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="telephone_ncy">Téléphone *</label>
-            <input type="tel" name="telephone" id="telephone_ncy" placeholder="06 XX XX XX XX" required>
-          </div>
-          <div class="field">
-            <label for="email_ncy">Email professionnel *</label>
-            <input type="email" name="email" id="email_ncy" placeholder="vous@entreprise.fr" required>
-          </div>
-          <div class="field">
-            <label for="codepostal_ncy">Code postal *</label>
-            <input type="text" name="codepostal" id="codepostal_ncy" placeholder="Ex: 67000" required pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
-          </div>
-          <div class="field">
-            <label for="description_ncy">Description du projet</label>
-            <textarea name="description" id="description_ncy" rows="4" placeholder="Décrivez brièvement votre besoin (optionnel) — type de local, superficie, équipements existants..."></textarea>
-          </div>
-          <button type="submit" class="btn-cta">Diagnostic gratuit Nancy →</button>
                 </form>
         <div class="form-success" style="display:none">
           <div class="success-icon">✅</div>
