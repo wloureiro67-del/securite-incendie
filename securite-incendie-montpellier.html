@@ -183,19 +183,41 @@
             </select>
           </div>
           <div class="field">
-            <label for="ville_mtp">Commune *</label>
-            <input type="text" name="ville" id="ville_mtp" placeholder="Montpellier, Castelnau, Lunel…" required>
+            <label for="surface_mtp">Surface approximative *</label>
+            <select name="surface" id="surface_mtp" required>
+              <option value="">-- Sélectionnez --</option>
+              <option value="Moins de 100 m²">Moins de 100 m²</option>
+              <option value="100 à 300 m²">100 à 300 m²</option>
+              <option value="300 à 1000 m²">300 à 1 000 m²</option>
+              <option value="Plus de 1000 m²">Plus de 1 000 m²</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="nom_mtp">Votre nom *</label>
+            <input type="text" name="nom" id="nom_mtp" placeholder="Votre nom" required autocomplete="family-name">
+          </div>
+          <div class="field">
+            <label for="entreprise_mtp">Nom de l'entreprise</label>
+            <input type="text" name="entreprise" id="entreprise_mtp" placeholder="Nom de votre entreprise (optionnel)" autocomplete="organization">
           </div>
           <div class="field">
             <label for="telephone_mtp">Téléphone *</label>
             <input type="tel" name="telephone" id="telephone_mtp" placeholder="06 XX XX XX XX" required>
           </div>
           <div class="field">
-            <label for="email_mtp">Email *</label>
+            <label for="email_mtp">Email professionnel *</label>
             <input type="email" name="email" id="email_mtp" placeholder="vous@entreprise.fr" required>
           </div>
+          <div class="field">
+            <label for="codepostal_mtp">Code postal *</label>
+            <input type="text" name="codepostal" id="codepostal_mtp" placeholder="Ex: 67000" required pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
+          </div>
+          <div class="field">
+            <label for="description_mtp">Description du projet</label>
+            <textarea name="description" id="description_mtp" rows="4" placeholder="Décrivez brièvement votre besoin (optionnel) — type de local, superficie, équipements existants..."></textarea>
+          </div>
           <button type="submit" class="btn-cta">Diagnostic gratuit Montpellier →</button>
-        </form>
+                </form>
         <div class="form-success" style="display:none">
           <div class="success-icon">&#9989;</div>
           <h3>Demande envoyée !</h3>
